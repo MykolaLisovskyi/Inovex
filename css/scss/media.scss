@@ -1,0 +1,590 @@
+
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    font-size: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-line($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    line-height: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    line-height: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin margin-top($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    margin-top: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    margin-top: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin margin-bottom($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    margin-bottom: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    margin-bottom: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-img($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    width: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    width: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-padding-top($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    padding-top: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    padding-top: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-padding-bottom($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    padding-bottom: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    padding-bottom: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-padding-right($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    padding-right: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    padding-right: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-padding-left($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    padding-left: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    padding-left: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+body{
+  overflow-y:hidden;
+}
+.back{
+  animation-name: slideDownBack;
+  -webkit-animation-name: slideDownBack;  
+animation-delay: 2.4s;
+  animation-duration: 1.2s; 
+  -webkit-animation-duration: 1.2s;
+
+  animation-timing-function: ease-out;    
+  -webkit-animation-timing-function: ease-out;    
+
+  visibility: visible !important;         
+}
+@keyframes slideDownBack {
+  0% {
+      transform: translateY(40px);
+  }
+         
+  100% {
+      transform: translateY(0px);
+  }       
+}
+
+@-webkit-keyframes slideDownBack {
+  0% {
+      -webkit-transform: translateY(40px);
+  }
+          
+  100% {
+      -webkit-transform: translateY(0px);
+  }   
+
+}
+.back{
+  bottom: -10px;
+  left: calc( 50% - 18px);
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  z-index: 50;
+  place-items: center;
+  transition: 0.5s ease-out;
+  
+  @media only screen and (max-width: 600px) {
+display: none;
+  }
+  &:hover{
+    bottom:0px;
+    p{
+      color: white;
+    }
+    div{
+      background-color: white;
+    }
+  }
+  p{
+    font-size: 14px;
+    font-family: "Lato";
+    font-weight: 300;
+    color: #c4c4c4;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  div{
+    height: 50px;
+    width: 1px;
+    background-color: rgb(196,196,196);
+  }
+}
+main{
+  @media only screen and (max-height: 800px) {
+    // height: 100% !important;
+    // margin-top: 90px;
+    // padding-bottom: 50px;
+    // align-items: baseline;
+    height: 100% !important;
+}
+    @media only screen and (max-width: 1150px) {
+width: 100% !important;
+    }
+    @media only screen and (max-width: 600px) {
+        // height: auto !important;
+        // margin-top: 90px;
+            }
+}
+.main_content{
+    display: flex;
+    flex-flow: column;
+    color: white;
+    text-align: center;
+    max-width: 1050px;
+    place-content: center;
+    @media only screen and (max-width: 1150px) {
+max-width: 90%;
+width: 100%;
+    }
+}
+.main_button_bottom{
+  animation-name: slideDownOpBut;
+  -webkit-animation-name: slideDownOpBut;  
+animation-delay: 2.4s;
+  animation-duration: 1.6s; 
+  -webkit-animation-duration: 1.6s;
+
+  animation-timing-function: ease-out;    
+  -webkit-animation-timing-function: ease-out;    
+
+  visibility: visible !important;        
+}
+@keyframes slideDownOpBut {
+  0% {
+      opacity: 0;
+display: none;
+
+  }
+  10% {
+  }
+  20%{
+  }
+  30%{
+    transform: translateY(-40px);
+    opacity: 0;
+
+  }
+  80%{
+opacity: 1;
+  }
+  100% {
+    opacity: 1;
+      transform: translateY(0px);
+  }       
+}
+
+@-webkit-keyframes slideDownOpBut {
+  0% {
+    opacity: 0;
+display: none;
+
+}
+10% {
+}
+20%{
+}
+15%{
+  transform: translateY(-40px);
+  opacity: 0;
+
+}
+80%{
+opacity: 1;
+}
+100% {
+  opacity: 1;
+    transform: translateY(0px);
+}         
+}
+.main_button_bottom{
+  position: relative;
+  display: flex;
+  width: max-content;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  margin-top: 60px;
+  @media only screen and (max-width: 1000px) {
+margin-top: 25px;
+  }
+}
+.contact{
+  font-family: 'Lato';
+  font-weight: 300;
+font-size: 24px;
+text-transform: uppercase;
+padding:20px 42px;
+border: 1px solid rgb(94,199,235);
+color: rgb(94,199,235);
+display: flex;
+width: max-content;
+margin-left: auto;
+margin-right: auto;
+@media only screen and (max-width: 1000px) {
+  @include adaptiv-font(24,17);
+
+}
+@media only screen and (max-width: 600px) {
+padding:18px 32px;
+
+}
+}
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+
+// Mixin below used to center the button. If using in production, remove the mixin and add position relative or absolute to button.
+
+@mixin center($extend: true) {
+    @if $extend {
+        @extend %center;
+    } @else {
+   
+    }
+}
+
+%center {
+    @include center($extend: false);
+}
+
+
+.contact{
+  @include center;
+  background: transparent;
+  transition: .6s;
+  overflow: hidden;
+  &:focus{
+    outline: 0;
+  }
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5;
+    filter: blur(30px);    background: rgb(94,199,235);
+
+    transform: translateX(-100px)  skewX(-15deg);
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(5px);    background: rgb(94,199,235);
+
+    transform: translateX(-100px) skewX(-15deg);
+  }
+  &:hover{
+    background: rgb(94,199,235);
+    cursor: pointer;
+    color: black;
+    opacity: 0.8;
+    &:before{
+      transform: translateX(300px)  skewX(-15deg);  
+      opacity: 0.9;
+      transition: .7s;
+    }
+    &:after{
+      transform: translateX(300px) skewX(-15deg);  
+      opacity: 1;
+      transition: .7s;
+    }
+  }
+}
+.main_content_top{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    .main_content_top_title{
+      justify-content: center;
+      text-align: center;
+      display: flex;
+    flex-flow: column;
+      animation-name: slideDown;
+      -webkit-animation-name: slideDown;  
+    animation-delay: 2.4s;
+      animation-duration: 0.9s; 
+      -webkit-animation-duration: 0.9s;
+    
+      animation-timing-function: ease-out;    
+      -webkit-animation-timing-function: ease-out;    
+    
+      visibility: visible !important;         
+    }
+    @keyframes slideDown {
+      0% {
+          transform: translateY(-30%);
+      }
+             
+      100% {
+          transform: translateY(0%);
+      }       
+    }
+    
+    @-webkit-keyframes slideDown {
+      0% {
+          -webkit-transform: translateY(-30%);
+      }
+              
+      100% {
+          -webkit-transform: translateY(0%);
+      }   
+    }
+  
+    
+    .main_content_top_button{
+      display: flex;
+      z-index: 600;
+      margin-top: 40px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      @media only screen and (max-width: 600px) {
+margin-top: 30px;
+      }
+      a{
+          z-index: 600;
+          cursor: pointer !important;
+          color: white;
+          transition: all 0.3 ease;
+                  font-family: 'Lato';
+                  font-weight: 300;
+text-decoration: none;
+font-size: 20px;
+@include adaptiv-font(20,15);
+
+          &:hover{
+              color: #5ec7eb;
+          }
+      }
+      p{
+          color: white;
+          font-family: 'Lato';
+          font-weight: 300;
+          margin:0px 15px;
+          font-size: 20px;
+      }
+  
+    }
+}
+.main_content_center{
+  animation-name: slideDownOp;
+  -webkit-animation-name: slideDownOp;  
+animation-delay: 2.4s;
+  animation-duration: 1.5s; 
+  -webkit-animation-duration: 1.5s;
+display: flex;
+place-content: center;
+flex-flow: column;
+  animation-timing-function: ease-out;    
+  -webkit-animation-timing-function: ease-out;    
+
+  visibility: visible !important;        
+}
+@keyframes slideDownOp {
+  0% {
+      opacity: 0;
+display: none;
+
+  }
+  10% {
+  }
+  20%{
+  }
+  15%{
+    transform: translateY(-40px);
+    opacity: 0;
+
+  }
+  80%{
+opacity: 1;
+  }
+  100% {
+    opacity: 1;
+      transform: translateY(0px);
+  }       
+}
+
+@-webkit-keyframes slideDownOp {
+  0% {
+    opacity: 0;
+display: none;
+
+}
+10% {
+}
+20%{
+}
+15%{
+  transform: translateY(-40px);
+  opacity: 0;
+
+}
+80%{
+opacity: 1;
+}
+100% {
+  opacity: 1;
+    transform: translateY(0px);
+}         
+
+}
+.main_content_title{
+    text-transform: uppercase;
+    font-size: 60px;
+    @include adaptiv-font(60,24);
+    font-family: 'Lato';
+    font-weight: 300;
+  color:white;
+}
+.main_content_description{
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 24px;
+@include adaptiv-font(18,15);
+    max-width: 1000px;
+    text-align: center;
+    line-height: 1.458;
+    place-self: center;
+    color:white;
+}
+hr{
+    border: 1px solid rgb(94,199,235);
+    width: 63px;
+    place-self: center;
+    margin:50px 0px;
+    @media only screen and (max-width: 600px) {
+margin:25px 0px;
+width: 34px;
+    }
+}
+.main_content_card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 80px;
+    margin-top: 80px;
+    @media only screen and (max-width: 600px) {
+margin-top: 30px;
+grid-template-columns: repeat(2,1fr);
+grid-row-gap: 50px;
+
+    }
+    .main_content_card_item{
+        flex-flow: column;
+    justify-content: flex-end;
+    place-items: center;
+    display: flex;
+    transition: 0.3s all ease;
+    @media only screen and (max-width: 600px) {
+justify-content: flex-start;
+    }
+    svg{
+        display: flex;
+        place-self: center;
+        margin-left: auto;
+        margin-right: auto;   
+         transition: 0.3s;
+         @media only screen and (max-width: 600px) {
+            width: 100%;
+            max-width: 70px;
+            min-height: 98px;
+                }
+image{
+    width: 100%;
+  
+}
+    }
+    &:hover{
+        p{
+            color: #5ec7eb;
+        }
+    }
+    .active{
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &:hover{
+        .desktop{
+            display: none;
+        }
+        .active{
+            display:flex ;
+        }
+    }
+    }
+
+    p{
+        font-family: 'Lato';
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 20px;
+        @include adaptiv-font(20,16);
+        color: rgb(191,191,191);
+        margin-top: 40px;
+        @include adaptiv-font(20,15);
+        @media only screen and (max-width: 600px) {
+margin-top: 20px;
+        }
+    }
+}

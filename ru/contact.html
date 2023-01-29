@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovex</title>
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../fonts/lato.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="../css/popup.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  
+<!--------------------------- PAGE TRANSITION & PRELOADER ---------------------->
+<pagetrans>
+  
+  <script src="../js/transFunctions.js"></script>
+
+  <div class="columns hide-in-left">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
+</pagetrans>
+<!--------------------------- PAGE TRANSITION & PRELOADER ---------------------->
+
+    <a href="../indexRU" class="menu_logo">
+      <img src="../img/logo_menu.png" alt="">
+    </a>
+  <div class="menu">
+    <content>
+      <input id="hamburger" class="hamburger" type="checkbox" />
+      <label class="hamburger" for="hamburger">
+        <i></i>
+        <text>
+        </text>
+      </label>
+      <section class="drawer-list" id="menu2">
+
+        <ul>
+          <div class="menu_logo">
+            <img src="../img/logo_menu.png" alt="">
+          </div>
+          <input id="hamburger" class="hamburger" type="checkbox" />
+          <li><a href="services" class="translink">услуги</a></li>
+          <li><a href="clients" class="translink">клиенты</a></li>
+          <li><a href="about" class="translink">о нас</a></li>
+          <li><a href="contact" class="translink">контакты</a></li>
+          <div class="menu_button_footer">
+              <div class="menu_button_footer_item">
+                <a href="../ua/contact" >UA </a>
+                <p>/</p>
+                <a href="../en/contact" >EN </a>
+                <p>/</p>
+            <a  class="active">RU </a>  
+            </div>
+            <div class="menu_button_footer_item">
+              <a href="">FACEBOOK</a>
+              <p>/</p>
+              <a href="" class="">LINKEDIN</a>
+              <p>/</p>
+              <a href="">TELEGRAM</a>
+            </div>
+          </div>
+        </ul>
+
+      </section>
+    </content>
+  </div>
+  <main>
+   
+    <div class="main_content">
+    <link rel="stylesheet" href="../css/contact.css">
+      <div class="main_content_first" ><p class="main_content_title">Заходите к нам. <br>Делитесь мыслями. </p>
+        <hr class="hr_desktop">
+      </div>
+      
+      <div class="main_content_content">
+      <div class="main_content_left ">
+        <div class="main_content_left_item">
+          <p>Посетите нас:</p>
+          <p>Проспект Победы, 26А. Киев, Украина</p>
+        </div>
+        <div class="main_content_left_item">
+          <p>Наш Email:</p> 
+          <a href="mailto:hello@innovex.pro">hello@innovex.pro</a>
+        </div>
+
+        <div class="main_content_left_item">
+          <p>Звоните:</p>
+          <a href="telto:+38-063-407-0777">+38-063-407-0777</a>
+        </div>
+      </div>
+   <div class="main_content_right ">
+    <hr class="mobile_hr">
+
+     <form  id="form" name="form">
+       <input type="text" placeholder="Имя" name="name" required>
+       <input type="text" placeholder="Телефон" name="telephone" required>
+       <input type="text" placeholder="Сообщение" name="message" required>
+       <button type="submit">Отправить сообщение</button>
+     </form>
+   </div>
+    </div>
+    </div>
+  
+  </main>
+  <div class="ol-md-4 col-xs-12 b-popup block7_popup" id="popupThanks">
+
+    <div class="popup_content">
+      <p class="popup_content_name" id="popup_content_name">Спасибо за сообщение. <br> Отправлено</p>
+    
+    </div>
+  </div>
+ <script type="text/javascript">
+  $('#form').submit(function(e) {
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    $.post(
+      '../main.php', // адрес обработчика
+      $("#form").serialize(), // отправляемые данные
+
+      function(msg) { // получен ответ сервера
+  $("#popupThanks").css('display', 'flex');
+
+        window.setTimeout(function(){
+          $("#popupThanks").hide();
+
+}, 2500);
+      }
+    );
+
+    return false;
+  });
+</script>
+  <script src="../js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+</body>
+
+</html>

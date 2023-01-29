@@ -1,0 +1,243 @@
+
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    font-size: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-line($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    line-height: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    line-height: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin margin-top($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    margin-top: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    margin-top: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin margin-bottom($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    margin-bottom: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    margin-bottom: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-img($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    width: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    width: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-padding-top($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    padding-top: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    padding-top: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-padding-bottom($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    padding-bottom: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    padding-bottom: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-padding-right($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    padding-right: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    padding-right: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-padding-left($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  @media only screen and (min-width: 1920px) {
+    padding-left: #{$pcSize + px};
+  }
+  @media only screen and (max-width: 1920px) {
+    padding-left: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+}
+main{
+    @media only screen and (max-height: 800px) {
+        height: 100% !important;
+        margin-top: 90px;
+        padding-bottom: 50px;
+        align-items: baseline;
+    }
+    @media only screen and (max-width: 1150px) {
+width: 100% !important;
+    }
+    @media only screen and (max-width: 600px) {
+        height: auto !important;
+        margin-top: 90px;
+        padding-bottom: 50px;
+            }
+}
+.main_content{
+    display: flex;
+    flex-flow: column;
+    color: white;
+    text-align: center;
+    max-width: 950px;
+    width: 100%;
+    place-content: center;
+    @media only screen and (max-width: 1150px) {
+max-width: 90%;
+width: 100%;
+margin-top: 30px;
+    }
+    @media only screen and (max-width: 600px) {
+
+    }
+}
+.main_content_top{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.main_content_title{
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: 'Lato';
+    font-weight: 300;
+  color:white;
+}
+.main_content_description{
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 24px;
+@include adaptiv-font(24,14);
+    max-width: 550px;
+    text-align: center;
+    line-height: 1.458;
+    place-self: center;
+    color:white;
+}
+hr{
+    border: 1px solid rgb(94,199,235);
+    width: 63px;
+    place-self: center;
+    margin:30px 0px;
+    @media only screen and (max-width: 600px) {
+width: 34px;
+    }
+}
+.main_content_card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 80px;
+    margin-top: 80px;
+    @media only screen and (max-width: 600px) {
+      margin-top: 20px;
+      grid-template-columns: repeat(2, 40%);
+      grid-row-gap: 40px;
+      margin-right: auto;
+      margin-left: auto;
+      justify-content: space-between;
+
+    }
+    .main_content_card_item{
+        flex-flow: column;
+    place-items: center;
+    display: flex;
+    transition: 0.3s all ease;
+    @media only screen and (max-width: 600px) {
+justify-content: flex-start;
+    }
+    svg{
+        display: flex;
+        place-self: center;
+        margin-left: auto;
+        margin-right: auto;   
+         transition: 0.3s;
+         display: flex;
+    max-height: 98px;
+    height: 100%;
+    writing-mode: vertical-lr;
+         @media only screen and (max-width: 600px) {
+            width: 100%;
+            max-width: 70px;
+            min-height: 98px;
+                }
+image{
+    width: 100%;
+  display: flex;
+  height: 100%;
+}
+    }
+    &:hover{
+        p{
+            color: #5ec7eb;
+        }
+    }
+    .active{
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &:hover{
+        .desktop{
+            display: none;
+        }
+        .active{
+            display:flex ;
+        }
+    }
+    a{
+      display: flex;
+    flex-flow: column;
+    place-items: center;
+      p{
+        display: flex;
+      }
+    }
+    }
+
+    p{
+        font-family: 'Lato';
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 20px;
+        color: rgb(191,191,191);
+        margin-top: 40px;
+        font-size: 18px;
+        @media only screen and (max-width: 600px) {
+margin-top: 10px;
+@include adaptiv-font(20,10);
+}
+    }
+}

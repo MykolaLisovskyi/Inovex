@@ -1,0 +1,14 @@
+
+main{
+    @media only screen and (max-width: 600px) {
+justify-content: center;
+align-items: flex-start;
+margin-top: 96px;
+    padding-bottom: 50px;
+    }
+}
+.main_content{
+    @media only screen and (max-width: 600px) {
+        place-content:inherit !important;
+    }  
+}
